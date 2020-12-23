@@ -14,14 +14,13 @@ import locale from "element-ui/lib/locale/lang/zh-TW";
 import VCharts from "v-charts";
 
 /* 基本style */
-import "element-ui/lib/theme-chalk/index.css";
+import "./assets/custom-theme/basicElementUi.scss";
 
 /* custom style */
-import "@/assets/custom-theme/custom2.scss";
+// import "@/assets/custom-theme/custom2.scss";
 
 /* sweet alert */
 import VueSweetalert2 from "vue-sweetalert2";
-
 import VueContextMenu from "vue-contextmenu";
 
 /* s */

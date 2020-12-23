@@ -119,29 +119,52 @@ export default {
   vertical-align: middle;
 }
 .el-menu-item:focus.dark {
-  background: $darkPrimary;
+  background: transparent;
 }
 .el-menu-item:hover.dark {
-  background: $darkPrimary2;
+  background: transparent;
 }
 .dark.el-menu-item {
   color: #ffffff;
-  background: $darkPrimary2;
+  background: transparent;
 
   &:hover {
-    background: $darkPrimary2;
+    background: transparent;
   }
 
   &:focus {
-    background: $darkPrimary3;
+    background: transparent;
   }
 }
 
 .submenu-title-noDropdown.dark {
-  background: $darkPrimary;
+  background: transparent;
+
+  &.is-active {
+    background-image: radial-gradient(
+      $--color-primary-dark-9,
+      $--color-primary-dark-5,
+      $--color-primary
+    ) !important;
+  }
 }
 
 ::v-deep .dark .el-submenu__title:hover {
-  background: darken($color: $primary, $amount: 35) !important;
+  background: transparent !important;
+}
+
+::v-deep .dark .is-active {
+  background-image: radial-gradient(
+    $--color-primary-dark-9,
+    $--color-primary-dark-5,
+    $--color-primary
+  ) !important;
+}
+
+::v-deep .dark .el-submenu__title {
+  background: transparent !important;
+}
+::v-deep .dark .el-menu {
+  background: transparent !important;
 }
 </style>

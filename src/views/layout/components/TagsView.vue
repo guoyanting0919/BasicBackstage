@@ -138,11 +138,11 @@ export default {
     .tags-view-wrapper {
       .tags-view-item {
         &.active {
-          color: $primary;
-          background-color: $subMenuBg;
+          color: $--color-primary;
+          background-color: $--color-primary-light-9;
           border-color: #dcdfe6;
           &::before {
-            background: $primary;
+            background: $--color-primary;
           }
         }
       }
@@ -172,8 +172,8 @@ export default {
       // margin-top: 4px;
       &.active {
         color: #fff;
-        background-color: $darkPrimary;
-        border-color: $darkPrimary;
+        background-color: $--color-primary;
+        border-color: $--color-primary;
         &::before {
           content: "";
           background: #fff;

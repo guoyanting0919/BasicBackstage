@@ -53,6 +53,12 @@ export default {
 </script>
 <style lang="scss" scoped>
 .dark {
-  background: $darkPrimary;
+  background-image: linear-gradient(
+    to bottom,
+    $--color-primary,
+    $--color-primary-dark-1,
+    $--color-primary-dark-5,
+    $--color-primary-dark-9
+  );
 }
 </style>
