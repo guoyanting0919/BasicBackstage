@@ -139,7 +139,7 @@ export const constantRouterMap = [
 ];
 
 var router = new Router({
-  // mode: 'history', //後端支持可開
+  mode: "history", //後端支持可開
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRouterMap,
 });
