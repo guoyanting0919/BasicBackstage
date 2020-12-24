@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-column {{ $camelCasename }}">
+  <div class="flex-column {{ $頁面ID }}">
     <sticky :className="'sub-navbar'">
       <div class="filter-container">
         <el-input
@@ -66,13 +66,18 @@
 </template>
 
 <script>
+
+/* components */
 import Sticky from "@/components/Sticky";
 import Title from "@/components/ConsoleTableTitle";
 import permissionBtn from "@/components/PermissionBtn";
 import Pagination from "@/components/Pagination";
 
+/* API */
+import * as {{ $apiName }} from "@/api/{{ $apiName }}";
+
 export default {
-  name: "{{ $camelCasename }}",
+  name: "{{ $頁面ID }}",
   components: { Sticky, Title, permissionBtn, Pagination },
   data() {
     return {
@@ -86,7 +91,6 @@ export default {
         page: 1,
         limit: 20,
         key: undefined,
-        NewsTypeId: "",
       },
       temp: {
         id: "",
@@ -114,11 +118,37 @@ export default {
     },
 
     /* 獲取主要資料 */
-    getList() {},
+    getList() {
+      const vm = this
+      {{ $apiName }}.load(vm.listQuery).then(res=>{
+        vm.$cl(res)
+        vm.list = res.result
+      })
+    },
+
+    /* 新增資料 */
+    handleAdd(){},
+
+    /* 編輯資料 */
+    handleUpdate(){},
+
+    /* 刪除資料 */
+    handleDelete(){},
+
+    /* 獲取單筆資料 */
+    handleGet(){},
 
     /* 權限按鈕中控 */
     onBtnClicked(domId) {
       this.$cl(domId);
+      switch (domId) {
+        case 'add':
+          this.handleAdd()
+          break;
+      
+        default:
+          break;
+      }
     },
     rowClick() {},
     handleSelectionChange(val) {
@@ -137,5 +167,5 @@ export default {
 };
 </script>
 
-<style>
+<style lang='scss' scoped>
 </style>
