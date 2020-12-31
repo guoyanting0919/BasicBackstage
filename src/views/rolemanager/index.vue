@@ -6,7 +6,7 @@
           @keyup.enter.native="handleFilter"
           prefix-icon="el-icon-search"
           size="small"
-          style="width: 200px; margin-bottom: 0;"
+          style="width: 200px; margin-bottom: 0"
           class="filter-item"
           :placeholder="'關鍵字'"
           v-model="listQuery.key"
@@ -20,7 +20,7 @@
 
         <el-checkbox
           size="small"
-          style="margin-left:15px;"
+          style="margin-left: 15px"
           @change="tableKey = tableKey + 1"
           v-model="showDescription"
           >Id/描述</el-checkbox
@@ -28,8 +28,8 @@
       </div>
     </sticky>
     <div class="app-container flex-item">
-      <Title title="角色管理"></Title>
-      <div class="bg-white" style="height:calc(100% - 50px)">
+      <main-title title="角色管理"></main-title>
+      <div class="bg-white" style="height: calc(100% - 50px)">
         <el-table
           ref="mainTable"
           :key="tableKey"
@@ -38,7 +38,7 @@
           border
           fit
           highlight-current-row
-          style="width: 100%;"
+          style="width: 100%"
           height="calc(100% - 52px)"
           @row-click="rowClick"
           @selection-change="handleSelectionChange"
@@ -223,7 +223,7 @@
             roleUsers.rowIndex > -1 && roleUsers.list[roleUsers.rowIndex]
           "
         ></selectUsersCom>
-        <div style="text-align:right;" slot="footer">
+        <div style="text-align: right" slot="footer">
           <el-button
             size="small"
             type="cancel"
@@ -243,7 +243,7 @@
 import * as roles from "@/api/roles";
 import waves from "@/directive/waves"; // 水波紋指令
 import Sticky from "@/components/Sticky";
-import Title from "@/components/ConsoleTableTitle";
+import mainTitle from "@/components/ConsoleTableTitle";
 import RoleUsers from "@/components/RoleUsers";
 import permissionBtn from "@/components/PermissionBtn";
 import accessModules from "@/components/AccessModules";
@@ -262,7 +262,7 @@ export default {
     accessResource,
     Pagination,
     selectUsersCom,
-    Title,
+    mainTitle,
   },
   directives: {
     waves,
@@ -367,7 +367,7 @@ export default {
     handleSelectionChange(val) {
       this.multipleSelection = val;
     },
-    onBtnClicked: function(domId) {
+    onBtnClicked: function (domId) {
       console.log(domId);
       switch (domId) {
         case "btnAdd":
